@@ -1,0 +1,8 @@
+@use '../styles/app';
+
+@mixin container() {
+  @include app.screen-sm {
+    padding-left: calc(100% / 12 - 3rem);
+    padding-right: calc(100% / 12 - 3rem);
+  }
+}
