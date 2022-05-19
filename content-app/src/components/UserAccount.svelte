@@ -17,6 +17,7 @@
   .account-hover {
     position: absolute;
     display: none;
+    padding-top: 5px;
   }
 
   .account:hover .account-hover {
