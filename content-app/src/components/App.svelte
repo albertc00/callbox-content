@@ -32,7 +32,10 @@
 </script>
 
 <QueryClientProvider client={queryClient}>
-  <div>
+  <div
+    style="height: 100vh;
+  background-color: #f7f7f7;"
+  >
     <div class="navbar-selection">
       <div class="nav-wrapper">
         <Dashboard />

@@ -50,7 +50,7 @@
     color: #014e89;
   }
   .noresultlist {
-    padding-left: 26rem;
+    padding-left: 45rem;
     list-style: none;
   }
 

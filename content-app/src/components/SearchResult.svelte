@@ -34,6 +34,7 @@
   };
 
   import { onMount } from 'svelte';
+  import NoResult from './NoResult.svelte';
 
   let box;
   let yTop = 0;
@@ -117,6 +118,8 @@
                 on:setPage={(e) => ($pages = e.detail.page)}
               />
             </div>
+          {:else}
+            <NoResult />
           {/if}
         </div>
       </div>

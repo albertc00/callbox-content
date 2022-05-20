@@ -3,7 +3,7 @@
 
   let page = 1;
 
-  const loading = [250, 450, 530, 528, 562, 524, 500, 500, 500, 500];
+  const loading = [250, 220, 235, 210, 200, 245, 230, 210, 256, 240];
 </script>
 
 <h2 class="table-label">Case Studies</h2>
