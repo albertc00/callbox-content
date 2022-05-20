@@ -1,21 +1,21 @@
 <script>
-  import { isSearching, SearchTerm, fields } from './store';
+  import { isSearching, SearchTerm, fields } from '../store';
 
   function handleOnSubmit() {
     $isSearching = true;
     $fields = $fields;
   }
 
-  import Modal, { bind } from './modal/index.js';
+  import Modal, { bind } from '../modal/index.js';
   import { writable } from 'svelte/store';
-  import Filter from './modal/Filter.svelte';
+  import Filter from '../modal/Filter.svelte';
   const modal = writable(null);
   const showModal = () => modal.set(bind(Filter));
 </script>
 
 <div class="wrapper-spacer" />
 <div class="wrapper-bar">
-  <Modal show={$modal}>
+  <!-- <Modal show={$modal}>
     <button class="menubar" on:click={showModal} aria-label="Start search">
       <div class="menubarlabel">
         <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"
@@ -25,8 +25,8 @@
         ><span class="menulabel">Filters</span>
       </div>
     </button>
-  </Modal>
-
+  </Modal> -->
+  <div class="wrapper-spacer" />
   <form class="form" on:submit|preventDefault={handleOnSubmit}>
     <div class="wrapper svelte-iqmikt">
       <input

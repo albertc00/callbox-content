@@ -1,11 +1,11 @@
 <script>
-  import { Query } from '@sveltestack/svelte-query';
-  import Skeleton from 'svelte-skeleton/Skeleton.svelte';
   import { SearchTerm, selection, fields, category } from './store';
 
   const selec = [
     { id: 1, label: 'Case Studies' },
-    { id: 2, label: 'Coming Soon...' },
+    { id: 2, label: 'Blog' },
+    { id: 3, label: 'Coming Soon...' },
+    { id: 4, label: 'Coming Soon...' },
   ];
 </script>
 
