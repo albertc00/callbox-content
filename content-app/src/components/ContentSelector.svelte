@@ -48,6 +48,7 @@
     border: 1px solid #f7f7f7;
     font-family: 'Lato', sans-serif;
     color: #292929;
+    display: grid;
   }
   select.rc-select {
     border: 1.5px solid #f7f7f7;

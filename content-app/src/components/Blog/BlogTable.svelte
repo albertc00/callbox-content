@@ -219,9 +219,9 @@
             Blog Preview
           </button>
         </td>
-        <td>{post.status}</td>
+        <td class="table-td">{post.status}</td>
         <td>{@html post.excerpt.rendered}</td>
-        <td
+        <td class="table-td"
           ><img
             class="wp-post-img"
             src={post._embedded['wp:featuredmedia']['0'].link}
@@ -269,13 +269,16 @@
     background-color: #014e89;
     color: #fff;
   }
-
+  .table-td {
+    text-align: center;
+  }
   tr:hover .hide {
     display: block;
   }
   table {
     border: 1px solid rgb(199, 198, 198);
     border-collapse: collapse;
+    table-layout: fixed;
   }
 
   table,
