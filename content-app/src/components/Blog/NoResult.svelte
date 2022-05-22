@@ -2,16 +2,6 @@
   // import { useQuery } from '@sveltestack/svelte-query';
   // import { SearchTerm } from './store';
   // export let suggestion;
-
-  // function handleOnSubmit() {
-  //   $SearchTerm = suggestion;
-  // }
-
-  // const url = `https://www.callboxinc.com/wp-json/wp/v2/posts`;
-
-  // const queryResult = useQuery('posts', () =>
-  //   fetch(`${url}?per_page=3&orderby=rand`).then((res) => res.json())
-  // );
 </script>
 
 <div class="no-results svelte-19bcstx">
