@@ -88,7 +88,7 @@
     padding-top: 15px;
     justify-content: end;
     background-color: #f7f7f7;
-    padding-right: 20px;
+    padding-right: 38px;
   }
   .menubar {
     background: none;

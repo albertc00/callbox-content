@@ -172,8 +172,8 @@
     padding-top: 55px;
   }
   .modal {
-    padding-top: 5px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     display: grid;
     grid-auto-flow: column;
     justify-content: end;
