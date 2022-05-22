@@ -104,7 +104,7 @@
 
   .nav-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr max-content 50px 0.17fr;
+    grid-template-columns: 1fr 1fr max-content 50px 65px;
     padding: 0 30px;
     align-items: center;
   }
