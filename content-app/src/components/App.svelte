@@ -18,6 +18,7 @@
   import UserAccount from './UserAccount.svelte';
   import BlogResult from './Blog/BlogResult.svelte';
   import BlogSearchResult from './Blog/BlogSearchResult.svelte';
+  import TableLoading from './Blog/TableLoading.svelte';
 
   const queryClient = new QueryClient();
 
@@ -95,6 +96,7 @@
     color: #f7f7f7;
     text-align: center;
     font-size: 40px;
+    height: 54px;
   }
   .navbar-selection {
     top: 44px;

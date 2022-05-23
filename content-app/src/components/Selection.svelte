@@ -85,7 +85,7 @@
     border-radius: 4px;
     color: #777;
     font-family: 'Lato', sans-serif;
-    min-width: 200px;
+    min-width: 250px;
     min-height: 43px;
     margin: 0;
     width: 100%;

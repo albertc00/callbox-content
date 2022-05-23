@@ -117,9 +117,9 @@
 </div>
 
 <style>
-  .loading {
-    padding-top: 52px;
-  }
+  /* .loading {
+    padding-top: 20px;
+  } */
   .table-label {
     position: absolute;
     top: 5.5rem;

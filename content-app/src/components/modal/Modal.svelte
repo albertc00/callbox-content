@@ -456,6 +456,7 @@
     padding-right: 30px;
     right: 0;
     z-index: 1;
+    padding-top: 10px;
   }
 
   .bg {
@@ -495,17 +496,22 @@
     border-radius: 0.5rem;
     background: white;
   }
+
   .content {
     position: relative;
     padding: 1rem;
     max-height: calc(100vh - 4rem);
     overflow: auto;
   }
+
   .content.big {
     position: relative;
     padding: 0;
     max-height: calc(100vh - 4rem);
     overflow: auto;
+  }
+  .content.big::-webkit-scrollbar {
+    display: none;
   }
   .close.big {
     color: #fff;

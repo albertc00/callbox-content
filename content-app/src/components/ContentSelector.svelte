@@ -55,7 +55,7 @@
     border-radius: 4px;
     color: #f7f7f7;
     font-family: 'Lato', sans-serif;
-    min-width: 200px;
+    min-width: 250px;
     min-height: 43px;
     margin: 0;
     width: 100%;

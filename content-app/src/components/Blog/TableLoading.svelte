@@ -6,7 +6,7 @@
   const loading = [250, 220, 235, 210, 200, 245, 230, 210, 256, 240];
 </script>
 
-<h2 class="table-label">Case Studies</h2>
+<h2 class="table-label">Blog</h2>
 <div class="table-container">
   <div class="table-wrapper">
     <table>
@@ -44,18 +44,25 @@
 <div class="footer" style="min-height: 35rem; overflow: hidden;" />
 
 <style>
-  .table-wrapper {
-    overflow: scroll;
-    width: 95vw;
-    max-height: 72vh;
-    margin: 0 auto;
+  .table-label {
     position: absolute;
-    top: 11.35rem;
+    top: 5.5rem;
+    left: 3rem;
+    font-family: 'open Sans', sans-serif;
+    font-weight: 650;
+    font-size: 2rem;
   }
   .table-container {
     overflow: auto;
     width: 100%;
     margin: auto;
+  }
+
+  .table-wrapper {
+    overflow: scroll;
+    width: 95vw;
+    max-height: 72vh;
+    margin: 0 auto;
   }
   .footer {
     overflow: hidden;
@@ -110,14 +117,7 @@
     left: 0;
     z-index: 999;
   }
-  .table-label {
-    position: absolute;
-    top: 5.5rem;
-    left: 3rem;
-    font-family: 'open Sans', sans-serif;
-    font-weight: 650;
-    font-size: 2rem;
-  }
+
   table {
     border: 1px solid rgb(199, 198, 198);
     border-collapse: collapse;
