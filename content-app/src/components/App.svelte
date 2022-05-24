@@ -1,15 +1,7 @@
 <script>
   import Result from './Result.svelte';
   import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query';
-  import {
-    SearchTerm,
-    isSearching,
-    fields,
-    seeMore,
-    MoreField,
-    viewfield,
-    category,
-  } from './store';
+  import { isSearching, fields, category } from './store';
   import SearchForm from './SearchForm.svelte';
   import FieldResult from './FieldResult.svelte';
   import SearchResult from './SearchResult.svelte';
@@ -18,18 +10,8 @@
   import UserAccount from './UserAccount.svelte';
   import BlogResult from './Blog/BlogResult.svelte';
   import BlogSearchResult from './Blog/BlogSearchResult.svelte';
-  import TableLoading from './Blog/TableLoading.svelte';
 
   const queryClient = new QueryClient();
-
-  function onClick() {
-    $isSearching = false;
-    $SearchTerm = '';
-    $seeMore = false;
-    $fields = '';
-    $MoreField = false;
-    $viewfield = false;
-  }
 </script>
 
 <QueryClientProvider client={queryClient}>
