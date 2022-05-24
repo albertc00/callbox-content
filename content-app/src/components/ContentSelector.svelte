@@ -1,11 +1,11 @@
 <script>
-  import { SearchTerm, selection, fields, category, pages } from './store';
+  import { Query } from '@sveltestack/svelte-query';
+  import Skeleton from 'svelte-skeleton/Skeleton.svelte';
+  import { SearchTerm, selection, fields, category } from './store';
 
   const selec = [
     { id: 1, label: 'Case Studies' },
-    { id: 2, label: 'Blog' },
-    { id: 3, label: 'Coming Soon...' },
-    { id: 4, label: 'Coming Soon...' },
+    { id: 2, label: 'Coming Soon...' },
   ];
 </script>
 
@@ -48,14 +48,13 @@
     border: 1px solid #f7f7f7;
     font-family: 'Lato', sans-serif;
     color: #292929;
-    display: grid;
   }
   select.rc-select {
     border: 1.5px solid #f7f7f7;
     border-radius: 4px;
     color: #f7f7f7;
     font-family: 'Lato', sans-serif;
-    min-width: 250px;
+    min-width: 200px;
     min-height: 43px;
     margin: 0;
     width: 100%;

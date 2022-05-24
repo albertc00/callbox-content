@@ -10,20 +10,24 @@ export const selects = [
     id: 'client-industry',
     label: 'Product or Service',
   },
-
+  {
+    n: 3,
+    id: 'client-hq',
+    label: 'CF Client HQ',
+  },
   {
     n: 4,
     id: 'target-location',
-    label: ' Target Location',
+    label: 'CS Target Location',
   },
   {
     n: 5,
     id: 'target-industry',
-    label: 'Target Industry',
+    label: 'CS Target Industry',
   },
   {
     n: 6,
     id: 'target-dm',
-    label: ' Target DM',
+    label: 'CS Target DM',
   },
 ];

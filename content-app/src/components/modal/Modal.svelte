@@ -1,5 +1,5 @@
 <script context="module">
-  import { fieldID, category } from './../store.js';
+  import { fieldID } from './../store.js';
   /**
    * Create a Svelte component with props bound to it.
    * @type {(component: Component, props: Record<string, any>) => Component}
@@ -396,7 +396,7 @@
                 aria-label="Close modal"
                 on:click={close}
               >
-                {#if $fieldID > 0 && $category == 1}
+                {#if $fieldID > 0}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="#fff"
@@ -405,18 +405,7 @@
                     ><path
                       d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"
                     /></svg
-                  >
-                {:else if $category == 2 && $fieldID > 0}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="#014e89"
-                    height="48"
-                    width="48"
-                    ><path
-                      d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"
-                    /></svg
-                  >
-                {:else}
+                  >{:else}
                   <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"
                     ><path
                       d="M12.45 37.65 10.35 35.55 21.9 24 10.35 12.45 12.45 10.35 24 21.9 35.55 10.35 37.65 12.45 26.1 24 37.65 35.55 35.55 37.65 24 26.1Z"
@@ -456,7 +445,6 @@
     padding-right: 30px;
     right: 0;
     z-index: 1;
-    padding-top: 10px;
   }
 
   .bg {
@@ -496,22 +484,17 @@
     border-radius: 0.5rem;
     background: white;
   }
-
   .content {
     position: relative;
     padding: 1rem;
     max-height: calc(100vh - 4rem);
     overflow: auto;
   }
-
   .content.big {
     position: relative;
     padding: 0;
     max-height: calc(100vh - 4rem);
     overflow: auto;
-  }
-  .content.big::-webkit-scrollbar {
-    display: none;
   }
   .close.big {
     color: #fff;
@@ -523,7 +506,6 @@
     cursor: pointer;
     transition: background-color 0.4s ease-in-out;
   }
-
   .close {
     border: 0 none;
     background: none;

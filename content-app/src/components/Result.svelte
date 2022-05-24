@@ -1,16 +1,9 @@
 <script>
-  import TextWithButton from './Functions/TextWithButton.svelte';
-  import Textonly from './Functions/Textonly.svelte';
-  import Header from './Functions/Header.svelte';
-  import ButtonLink from './Functions/ButtonLink.svelte';
-  import TableFunc from './Functions/TableFunc.svelte';
-
   import { Query } from '@sveltestack/svelte-query';
   import Table from './Table.svelte';
   import { LightPaginationNav } from './pagination/index';
   import TableLoading from './TableLoading.svelte';
-  import { cols, pages, fieldID, SearchTerm } from './store';
-
+  import { cols, pages, fieldID } from './store';
   import { col } from './SelectColumn';
 
   import Modal, { bind } from './modal/index.js';
@@ -22,25 +15,29 @@
 
   const url = `https://www.callboxinc.com/wp-json/cbtk/v1/case-studies`;
 
-  let s;
-  $: s = $SearchTerm.toLowerCase();
+  $: page = $pages;
 
-  async function fetchPosts($pages, s) {
-    const data = await fetch(`${url}?s=${s}&page=${$pages}&per_page=10&fields=-1
-      `).then((res) => res.json());
+  async function fetchPosts(page) {
+    // const data = await fetch(
+    //   `${url}?s=tech&page=${page}&per_page=10&fields=${[5]}`
+    // ).then((res) => res.json());
+    // console.log(data);
+    // return data;
+    const res = await fetch(`${url}?s=tech&page=${page}&per_page=10&fields=5`);
+
+    const data = await res.json();
 
     return data;
   }
   $: queryOptions = {
-    queryKey: ['posts', $pages, s],
-    queryFn: () => fetchPosts($pages, s),
+    queryKey: ['posts', page],
+    queryFn: () => fetchPosts(page),
     keepPreviousData: true,
-    staleTime: Infinity,
     cacheTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
   };
 
   import { onMount } from 'svelte';
-  import NoResult from './NoResult.svelte';
 
   let box;
   let yTop = 0;
@@ -54,105 +51,6 @@
   }
 
   onMount(async () => parseScroll());
-
-  const colDef = [
-    {
-      title: 'Title',
-      headerComponent: Header,
-      cellComponent: TextWithButton,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'title' },
-    },
-    {
-      title: 'Product or Service',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'product' },
-    },
-    {
-      title: 'PDF',
-      headerComponent: Header,
-      cellComponent: ButtonLink,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'pdf' },
-    },
-    {
-      title: 'WEBPAGE',
-      headerComponent: Header,
-      cellComponent: ButtonLink,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'link' },
-    },
-    {
-      title: 'WEBPAGE UNLOCKED',
-      headerComponent: Header,
-      cellComponent: ButtonLink,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'linkUnlocked' },
-    },
-    {
-      title: 'TARGET LOCATION',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'targetLocation' },
-    },
-    {
-      title: 'TARGET DM',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'targetDM' },
-    },
-    {
-      title: 'TARGET INDUSTRY',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'targetIndustry' },
-    },
-    {
-      title: 'CLIENT LOCATION',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'clientLocation' },
-    },
-    {
-      title: 'CLIENT HQ',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'clientHQ' },
-    },
-    {
-      title: 'CAMPAIGN',
-      headerComponent: Header,
-      cellComponent: TableFunc,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'campaign' },
-    },
-    {
-      title: 'RESULTS',
-      headerComponent: Header,
-      cellComponent: TableFunc,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'results' },
-    },
-  ];
 </script>
 
 {#if $fieldID > 0}
@@ -205,7 +103,11 @@
                 on:mousemove={parseScroll}
               >
                 <!-- this is table -->
-                <Table {data} {colDef} />
+                <Table
+                  tableData={data}
+                  tableheaderData={col}
+                  tableheader={$cols}
+                />
 
                 <!-- table helloworld -->
               </div>
@@ -219,8 +121,6 @@
                 on:setPage={(e) => ($pages = e.detail.page)}
               />
             </div>
-          {:else}
-            <NoResult />
           {/if}
         </div>
       </div>
@@ -234,7 +134,7 @@
   }
   .table-label {
     position: absolute;
-    top: 5.5rem;
+    top: 7rem;
     left: 3rem;
     font-family: 'open Sans', sans-serif;
     font-weight: 650;
@@ -302,7 +202,7 @@
     grid-column-start: 2;
     display: flex;
     justify-content: flex-start;
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 25px;
   }
 </style>

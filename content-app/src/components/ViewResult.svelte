@@ -147,12 +147,44 @@
                           </div>
                         </div>
                         <div class="cs-content">
-                          {@html post.content}
+                          <div>
+                            <h2>The Client</h2>
+                            <p>
+                              The Client is a global leader in insurance
+                              technology, serving hundreds of carriers and
+                              agents, brokers, and other industry players in
+                              more than 30 countries.
+                            </p>
+                            <p>
+                              <strong>Lines of Business</strong><br /> PaaS
+                              (Platform as a Service)<br /> SaaS (Software as a Service)
+                            </p>
+                            <h2>The Challenge</h2>
+                            <p>
+                              The Client has been dedicated to insurtech
+                              innovation since its founding in 2000, and
+                              consecutively developed insurance platforms in the
+                              succeeding years: the world’s first browser/server
+                              based insurance core system suite, leading the
+                              advent and adoption of Java-based 3G insurance IT,
+                              and a cloud-native and microservices-based 4G
+                              insurance platform that provides a complete set of
+                              insurance APIs across an insurance policy’s full
+                              lifecycle.
+                            </p>
+                            <p>
+                              In this campaign, the Client wanted to address the
+                              challenges that the property casualty insurance
+                              market is facing through its cloud-based solution
+                              that enables digital insurance and enterprise
+                              level core system insurance software.
+                            </p>
+                          </div>
                         </div>
-                        <!-- <div class="btn-btm">
+                      </div>
+                      <!-- <div class="btn-btm">
                         <a class="pdf-button" href={post.pdf}>DOWNLOAD PDF</a>
                       </div> -->
-                      </div>
                     </article>
                   </div>
                 </div>
@@ -166,39 +198,13 @@
 </div>
 
 <style>
-  .cs-content {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    color: #5f7380;
-  }
-  .cs-content :global(h2) {
+  h2 {
+    font-family: 'Work Sans', work-sans, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
     color: #014e89;
-    font-family: 'Work Sans', work-sans, sans-serif;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
   }
-  .cs-content :global(h3) {
-    line-height: 1.3em;
-    color: #231f20;
-    font-family: 'Work Sans', work-sans, sans-serif;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-  }
-  .cs-content :global(li) {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    color: #5f7380;
-  }
-  .cs-content :global(ul) {
-    margin: 1rem 0;
-  }
-
   img {
     display: block;
     width: 100%;
@@ -206,7 +212,7 @@
   }
   .cs-content {
     display: grid;
-    row-gap: 1rem;
+    row-gap: 3rem;
   }
   .cs-campaign {
     display: grid;

@@ -37,11 +37,10 @@
   .table-wrapper {
     overflow: scroll;
     width: 95vw;
-    max-height: 73vh;
+    max-height: 72vh;
     margin: 0 auto;
     position: absolute;
-    top: 13.45rem;
-    padding-top: 5px;
+    top: 11.35rem;
   }
   .table-container {
     overflow: auto;
@@ -103,7 +102,7 @@
   }
   .table-label {
     position: absolute;
-    top: 6.9rem;
+    top: 5.5rem;
     left: 3rem;
     font-family: 'open Sans', sans-serif;
     font-weight: 650;

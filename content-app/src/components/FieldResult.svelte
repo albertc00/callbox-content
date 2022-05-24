@@ -1,10 +1,4 @@
 <script>
-  import TextWithButton from './Functions/TextWithButton.svelte';
-  import Textonly from './Functions/Textonly.svelte';
-  import Header from './Functions/Header.svelte';
-  import ButtonLink from './Functions/ButtonLink.svelte';
-  import TableFunc from './Functions/TableFunc.svelte';
-
   import Selection from './Selection.svelte';
   import { Query } from '@sveltestack/svelte-query';
   import { SearchTerm, selection, fields, cols, pages, fieldID } from './store';
@@ -36,7 +30,7 @@
       );
 
       const data = await res.json();
-
+      console.log(data);
       return data;
     } else {
       const res = await fetch(
@@ -72,104 +66,6 @@
   onMount(async () => parseScroll());
 
   import Table from './Table.svelte';
-  const colDef = [
-    {
-      title: 'Title',
-      headerComponent: Header,
-      cellComponent: TextWithButton,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'title' },
-    },
-    {
-      title: 'Product or Service',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'product' },
-    },
-    {
-      title: 'PDF',
-      headerComponent: Header,
-      cellComponent: ButtonLink,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'pdf' },
-    },
-    {
-      title: 'WEBPAGE',
-      headerComponent: Header,
-      cellComponent: ButtonLink,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'link' },
-    },
-    {
-      title: 'WEBPAGE UNLOCKED',
-      headerComponent: Header,
-      cellComponent: ButtonLink,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'linkUnlocked' },
-    },
-    {
-      title: 'TARGET LOCATION',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'targetLocation' },
-    },
-    {
-      title: 'TARGET DM',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'targetDM' },
-    },
-    {
-      title: 'TARGET INDUSTRY',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'targetIndustry' },
-    },
-    {
-      title: 'CLIENT LOCATION',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'clientLocation' },
-    },
-    {
-      title: 'CLIENT HQ',
-      headerComponent: Header,
-      cellComponent: Textonly,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'clientHQ' },
-    },
-    {
-      title: 'CAMPAIGN',
-      headerComponent: Header,
-      cellComponent: TableFunc,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'campaign' },
-    },
-    {
-      title: 'RESULTS',
-      headerComponent: Header,
-      cellComponent: TableFunc,
-      cellAs: 'td',
-      hidden: false,
-      args: { selector: 'results' },
-    },
-  ];
 </script>
 
 <svelte:head>
@@ -247,7 +143,11 @@ return data; -->
                 on:mousemove={parseScroll}
               >
                 <!-- this is table -->
-                <Table {data} {colDef} />
+                <Table
+                  tableData={data}
+                  tableheaderData={col}
+                  tableheader={$cols}
+                />
                 <!-- table helloworld -->
               </div>
             </div>
