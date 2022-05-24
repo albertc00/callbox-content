@@ -1,5 +1,5 @@
 <script>
-  import { SearchTerm, selection, fields, category } from './store';
+  import { SearchTerm, selection, fields, category, pages } from './store';
 
   const selec = [
     { id: 1, label: 'Case Studies' },
